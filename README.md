@@ -1,5 +1,5 @@
 # Use IFTTT and the lemon.markets API to trade in the stock market with services like Google Assistant 
-Code Snippet (Incomplete) which is part of the IFTTT implementation to execute trading on the stock market with Google's virutal assistant including the lemon.markets API. 
+Code Snippet (Incomplete) which is part of the Alexa/Google Home implementation to execute trading on the stock market with Amazon/Google's virutal assistant including the lemon.markets API.
 
 ## Instructions for Use
 This script can be used as a starting point to implement your own trading service with lemon.markets for your virtual assistant from Amazon.
