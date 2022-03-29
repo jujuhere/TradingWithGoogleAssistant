@@ -68,7 +68,7 @@ def lambda_handler(event, context):
      
     
     #send notification about trade
-    return_title = 'Alpaca '+ ('buy' if event['action']=='buy' else 'sell') +' Order Submitted'
+    return_title = 'Lemon.markets '+ ('buy' if event['action']=='buy' else 'sell') +' Order Submitted'
     return_body = 'Order to '+event['action']+' '+str(quantity)+' shares of '+symbol+' submitted.'
     requests.post('https://maker.ifttt.com/trigger/market_closed/with/key/{KEY}', params={'value1':return_title,'value2':return_body})
     
