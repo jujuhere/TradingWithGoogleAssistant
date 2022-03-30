@@ -10,14 +10,14 @@ def lambda_handler(event, context):
 
     # interpret voice input
     symbol = event['symbol'].upper().split(' ')[
-        -1]  # get the last word from voice input, in case extra words are detected
+        -1]  # get the last word from voice input
     try:
-        quantity = int(event['quantity'])  # this will work if the voice input for quantity is detected in number form
+        quantity = int(event['quantity'])  # voice input for quantity is detected in number form
     except:
         quantity = helpers.text2int(
-            event['quantity'])  # this will be used if the voice input for quantity is detected in word form
+            event['quantity'])  # voice input for quantity is detected in word form
 
-    # stock dictionary
+    # stock dictionary (add your stocks that you'd like to trade) 
     stock_dicts = {
         "NINTENDO": "JP3756600007",
         "SPOTIFY": "LU1778762911",
@@ -25,7 +25,7 @@ def lambda_handler(event, context):
     }
 
     # todo : insert parameters into place_order method
-    order = lemon_api.place_order()
+    order = lemon_api.place_order(stock_dicts[symbol], "<<ADD EXPIRATION DATE>>", quantity, event['action'])
     activated_order = lemon_api.activate_order(order)
 
     ifttt_handler.send_notification(event['action'], quantity, symbol)
