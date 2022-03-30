@@ -20,7 +20,18 @@ If you're not sure about how to use the lemon.markets API for the project, I'd r
 You'll notice that the script uses several environment variables to include the API. Please define the following in an .env file or within your IDE:
 
 - API_KEY - Your lemon.markets API key
-- stock_dict - Add the [stocks](https://www.boerse-muenchen.de/home) you'd like to buy/sell with Virtual Assistants into dictionary (left side: stockname & right side: ISIN, e.g. Nintendo : JP3756600007 ) 
+- stock_dict - Add the [stocks](https://www.boerse-muenchen.de/home) you'd like to buy/sell with Virtual Assistants into dictionary (left side: stockname & right side: ISIN, e.g. Nintendo : JP3756600007 )
+
+## Configuration
+
+The script uses several environment variables, configure your .env file as follows:
+
+```python
+TRADING_URL=https://paper-trading.lemon.markets/v1/
+API_KEY=<your-api-key>
+IFTTT_URL= https://maker.ifttt.com/trigger/market_closed/with/key/{KEY}
+```
+Please provide your unique `API_KEY`. 
 
 ## Interested in contributing?
 This (and all lemon.markets open source projects) is work in progress. 
