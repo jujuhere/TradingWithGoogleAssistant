@@ -8,6 +8,9 @@ class RequestHandler:
 
     # todo: implement skeleton for the post request
     def post_data(self, value_1: str, value_2: str):
+        notification = requests.post(
+            self.ifttt_url + endpoint, params = self.params)
+        return notification 
 
 class IFTTT(RequestHandler):
     def send_notification(self, side: str, quantity: int, symbol: str):
