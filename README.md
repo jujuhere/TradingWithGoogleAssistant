@@ -27,7 +27,7 @@ You'll notice that the script uses several environment variables to include the 
 The script uses several environment variables, configure your .env file as follows:
 
 ```python
-TRADING_URL=https://paper-trading.lemon.markets/v1/orders/
+TRADING_URL=https://paper-trading.lemon.markets/v1
 API_KEY=<your-api-key>
 IFTTT_URL= https://maker.ifttt.com/trigger/market_closed/with/key/{KEY}
 ```
