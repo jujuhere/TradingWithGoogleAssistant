@@ -30,8 +30,8 @@ class LemonMarketsAPI(RequestHandler):
             "quantity" : quantity,
             "venue" : venue,
         }
-        response = self.post_data(f"orders/", order_details)
-        return response.json().get("results").get("id")
+        return self.post_data(f"orders/", order_details)
+      #  return response.json().get("results").get("id")
         
         
         
