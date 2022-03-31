@@ -13,6 +13,8 @@ Sign up on AWS [here](https://signin.aws.amazon.com/signin?redirect_uri=https%3A
 By clicking this link below, you'll find a list of regions that you will need for setting up the layer in AWS (you need that to import the request library). You can find your region on the top-right corner of the AWS page (next to your profile). 
 * https://github.com/keithrozario/Klayers/tree/master/deployments/python3.9
 
+Upload the zip file into AWS Lambda. Make sure to change the name of the Python file main.py into lambda_handler.py (the actual name depends on your handler. an handler is written like lambda_function.lambda_handler and calls both (important) function & file on AWS.) 
+
 If you're not sure about how to use the lemon.markets API for the project, I'd recommend you to read the document to learn more about how to implement the lemon.markets API into your projects.
 * https://docs.lemon.markets
 
