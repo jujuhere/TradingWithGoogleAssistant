@@ -12,7 +12,7 @@ class RequestHandler:
     def post_data(self, endpoint: str, data):
         response = requests.post(
             self.url_trading + endpoint, json.dumps(data), headers = self.headers)
-        return response.json()
+        return response
     
     @property
     def headers(self):
@@ -30,7 +30,11 @@ class LemonMarketsAPI(RequestHandler):
             "quantity" : quantity,
             "venue" : venue,
         }
-        return self.post_data(f"orders/", order_details)
+        response = self.post_data(f"orders/", order_details)
+        return response.json().get('results').get('id')
+        print(response.json())
+        
+
 
     # todo: using the post_data method, activate an order
     # hint: return response in json format
@@ -39,3 +43,4 @@ class LemonMarketsAPI(RequestHandler):
             f"orders/{order_id}/activate/", {}
         )
         
+ 
