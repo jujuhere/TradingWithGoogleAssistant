@@ -25,7 +25,7 @@ def lambda_handler(event, context):
     }
 
     # todo : insert parameters into place_order method
-    order = lemon_api.place_order(stock_dicts[symbol], "2022-04-10", quantity, event['action'], "XMUN")
+    order = lemon_api.place_order(stock_dicts[symbol], "2022-04-10", event['action'], quantity, "XMUN")
     activated_order = lemon_api.activate_order(order)
 
     ifttt_handler.send_notification(event['action'], quantity, symbol)
