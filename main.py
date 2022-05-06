@@ -1,12 +1,12 @@
 from voice_trades import helpers
-from voice_trades.handlers.ifttt import IFTTT
+from voice_trades.handlers.zapier import ZAPIER
 from voice_trades.handlers.lemon import LemonMarketsAPI
 
 
 def lambda_handler(event, context):
 
     lemon_api: LemonMarketsAPI = LemonMarketsAPI()
-    ifttt_handler: IFTTT = IFTTT()
+    zapier_handler: ZAPIER = ZAPIER()
 
     # interpret voice input
     symbol = event['symbol'].upper().split(' ')[
@@ -25,10 +25,10 @@ def lambda_handler(event, context):
     }
 
     # todo : insert parameters into place_order method
-    order = lemon_api.place_order(stock_dicts[symbol], "2022-04-10", event['action'], quantity, "XMUN")
+    order = lemon_api.place_order(stock_dicts[symbol], "2022-05-30", event['action'], quantity, "XMUN")
     activated_order = lemon_api.activate_order(order.get("results").get("id"))
 
-    ifttt_handler.send_notification(event['action'], quantity, symbol)
+    zapier_handler.send_notification(event['action'], quantity, symbol)
 
     return {
         'statusCode': 200,
