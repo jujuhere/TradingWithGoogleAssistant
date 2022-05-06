@@ -1,12 +1,12 @@
 from voice_trades import helpers
-from voice_trades.handlers.zapier import ZAPIER
+from voice_trades.handlers.ifttt import IFTTT
 from voice_trades.handlers.lemon import LemonMarketsAPI
 
 
 def lambda_handler(event, context):
 
     lemon_api: LemonMarketsAPI = LemonMarketsAPI()
-    zapier_handler: ZAPIER = ZAPIER()
+    zapier_handler: IFTTT = IFTTT()
 
     # interpret voice input
     symbol = event['symbol'].upper().split(' ')[
