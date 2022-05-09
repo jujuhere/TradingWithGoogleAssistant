@@ -22,7 +22,8 @@ def lambda_handler(event, context):
         "PAYPAL": "CA70452C1095"
     }
 
-    # todo : insert parameters into place_order method (tip if not working: change symbol into number to call a specific key of the dictionary + change event into "buy" or "sell" + change quantiy into a number) 
+    # todo : insert parameters into place_order method 
+    # (tip if not working: change symbol into number to call a specific key of the dictionary + change event into "buy" or "sell" + change quantiy into a number) 
     order = lemon_api.place_order(stock_dicts[symbol], "2022-05-30", event['action'], quantity, "XMUN")
     activated_order = lemon_api.activate_order(order.get("results").get("id"))
 
