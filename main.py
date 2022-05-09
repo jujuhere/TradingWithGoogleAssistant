@@ -15,7 +15,7 @@ def lambda_handler(event, context):
         quantity = helpers.text2int(
             event['quantity'])  # voice input for quantity is detected in word form
 
-    # stock dictionary (add your stocks that you'd like to trade) 
+    # stock dictionary (add your stocks that you'd like to trade; you can also add your stock manually in Zapier's webhooks) 
     stock_dicts = {
         "NINTENDO": "JP3756600007",
         "SPOTIFY": "LU1778762911",
