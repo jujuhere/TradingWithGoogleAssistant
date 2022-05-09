@@ -4,7 +4,7 @@ Code Snippet (Incomplete) which is part of the Google Home implementation to exe
 ## Instructions for Use
 This script can be used as a starting point to implement your own trading service with lemon.markets for your virtual assistant from Amazon or Google.
 As you can already see, it only contains the Python code that you can use to upload on AWS.
-AWS is an environment which offers cloud computing plattforms for e.g. hosting your IFTTT implementation (the Python file).
+AWS is an environment which offers cloud computing plattforms for e.g. hosting your Zapier implementation (the Python file).
 
 You'll receive a step-by-step guide on how to set AWS for the Zapier implementation by contacting me via email with #lemonmarketsgoesHomeliving written in subject. I'll send you the guideline and will also show my openness for your questions. 
 
